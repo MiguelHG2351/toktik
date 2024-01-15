@@ -42,9 +42,18 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
         if ( snapshot.connectionState != ConnectionState.done ) {
           return const Center( child: CircularProgressIndicator( strokeWidth: 2, ), );
         }
-        return AspectRatio(
-          aspectRatio: controller.value.aspectRatio,
-          child: VideoPlayer(controller),
+        return GestureDetector(
+          onTap: () {
+            if ( controller.value.isPlaying ) {
+              controller.pause();
+              return;
+            }
+            controller.play();
+          },
+          child: AspectRatio(
+            aspectRatio: controller.value.aspectRatio,
+            child: VideoPlayer(controller),
+          ),
         );
       },
     );
