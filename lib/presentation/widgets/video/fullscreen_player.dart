@@ -52,7 +52,16 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
           },
           child: AspectRatio(
             aspectRatio: controller.value.aspectRatio,
-            child: VideoPlayer(controller),
+            child: Stack(
+              children: [
+                VideoPlayer(controller),
+                Positioned(
+                  bottom: 50,
+                  left: 20,
+                  child: VideoCaption(caption: widget.caption)
+                )
+              ],
+            ),
           ),
         );
       },
