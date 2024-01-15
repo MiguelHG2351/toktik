@@ -32,3 +32,5 @@ Renombren esos videos así, ya que es lo que se encuentra en nuestro data source
 7.mp4
 8.mp4
 ```
+
+## Recuerda usar: I/flutter para ver los logs en la consola.
